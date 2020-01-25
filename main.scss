@@ -1,9 +1,6 @@
 $color: black;
 $accent: #c43c00;
 
-[wip] {
-    background-color: rgba(blue, 0.2);
-}
 
 :root {
     font-family: sans-serif;
@@ -15,6 +12,10 @@ $accent: #c43c00;
 }
 
 @media screen {
+    [wip] {
+        background-color: rgba(blue, 0.2);
+    }
+
     .page {
         $margin: 0.25in;
         width: 8.5in - ($margin * 2);
@@ -56,21 +57,9 @@ header {
     border-bottom: solid $accent 2px;
     column-span: all;
 
-    &::after {
-        position: absolute;
-        display: block;
-        content: " ";
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-
-        opacity: 0.03;
-        $hex-size: 0.5in;
-        background-size: #{$hex-size * 2 * 30/36} #{$hex-size * 2};
-        background-image: url(../hex.svg);
-        z-index: -1;
-    }
+    $hex-size: 0.5in;
+    background-size: #{$hex-size * 2 * 30/36} #{$hex-size * 2};
+    background-image: url(../hex.svg);
 
     p {
         display: inline-block;
