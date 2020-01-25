@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 75 90" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <g id="pod">
+            <polygon stroke="black" fill="transparent" stroke-width="3" points="12.5,-22.5 -12.5,-22.5 -25,0 -12.5,22.5 12.5,22.5 25,0" />
+        </g>
+    </defs>
+    <use xlink:href="#pod" transform="translate(12.5, 0)"/>
+    <use xlink:href="#pod" transform="translate(50, 22.5)"/>
+    <use xlink:href="#pod" transform="translate(12.5, 45)"/>
+    <use xlink:href="#pod" transform="translate(50, 67.5)"/>
+    <use xlink:href="#pod" transform="translate(12.5, 90)"/>
+</svg>
