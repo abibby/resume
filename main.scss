@@ -16,6 +16,11 @@ $accent: #c43c00;
         background-color: rgba(blue, 0.2);
     }
 
+    [wip="reword"] {
+        background: none;
+        text-decoration: underline red;
+    }
+
     .page {
         $margin: 0.25in;
         width: 8.5in - ($margin * 2);
@@ -23,6 +28,7 @@ $accent: #c43c00;
         padding: $margin;
         box-shadow: 0 0 5px 5px rgba(black, 0.2);
         overflow: hidden;
+
     }
 }
 
@@ -54,16 +60,30 @@ h4 {
 
 header {
     position: relative;
-    border-bottom: solid $accent 2px;
     column-span: all;
 
-    $hex-size: 0.5in;
-    background-size: #{$hex-size * 2 * 30/36} #{$hex-size * 2};
-    background-image: url(../hex.svg);
+    &::after {
+        position: absolute;
+        content: ' ';
+        display: block;
+        top: -1in;
+        bottom: 0;
+        z-index: -1;
+
+        width: 100vw;
+        left: 50%;
+        transform: translateX(-50%);
+
+        border-bottom: solid $accent 2px;
+
+        $hex-size: 1in;
+        background-size: #{$hex-size * 2 * 30/36} #{$hex-size * 2};
+        background-image: url(../hex.svg);
+    }
+
 
     p {
-        display: inline-block;
-        width: 50%;
+        width: 70%;
     }
 
     address {
