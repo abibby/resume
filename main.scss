@@ -57,6 +57,15 @@ h4 {
     margin: 0;
 }
 
+h3 {
+    color: $accent;
+}
+
+h4 {
+    color: rgba($color, 0.7);
+    font-weight: bold;
+}
+
 .subtitle {
     color: $accent;
     font-weight: 400;
