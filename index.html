@@ -48,7 +48,7 @@
                 <h3>Automac Technical Solutions</h3>
                 <h4>Full Stack Developer</h4>
                 <div>
-                    <time>2017-05</time> - <time>present</time>
+                    <time datetime="2017-05-01"></time> - <time>present</time>
                 </div>
                 <ul>
                     <li wip> I made a website</li>
@@ -98,7 +98,7 @@
                     <h3>DonateABLE</h3>
                     <h4>Full Stack Developer</h4>
                     <div>
-                        <time>2019-12</time> - <time>present</time>
+                        <time datetime="2019-12"></time> - <time>present</time>
                     </div>
                     <ul>
                         <li wip="reword">
@@ -116,7 +116,7 @@
                     <h3>Polycon</h3>
                     <h4>Assembly Line Worker</h4>
                     <div>
-                        <time>2016-05</time> - <time>2016-08</time>
+                        <time datetime="2016-05"></time> - <time datetime="2016-08"></time>
                     </div>
                     <div class="subtitle">Skills</div>
                 </div> 
@@ -124,7 +124,7 @@
                     <h3>Home Hardware</h3>
                     <h4>Customer Person</h4>
                     <div>
-                        <time>2011-07</time> - <time>2015-08</time>
+                        <time datetime="2011-07"></time> - <time datetime="2015-08"></time>
                     </div>
                     <div class="subtitle">Skills</div>
                     <ul>
@@ -139,14 +139,14 @@
             <div class="job">
                 <h3>ComicBox</h3>
                 <h4>Comic book management server</h4>
-                <a href="https://comicbox.ca" wip>comicbox.ca</a>
+                <a href="https://github.com/comicbox/comicbox">github.com/comicbox/comicbox</a>
                 <div>
-                    <time>2018-09</time> - <time>present</time>
+                    <time datetime="2018-09-01"></time> - <time>present</time>
                 </div>
                 <ul>
                     <li>
-                        ComicBox is a server that lets you host and manage a
-                        digital comic book collection, similar to what Plex does
+                        ComicBox lets you host and manage a digital comic book
+                        collection through a website, similar to what Plex does
                         for movies and TV shows.
                     </li>
                     <li wip="reword">
@@ -166,9 +166,9 @@
             <div class="job">
                 <h3>Turbo Slug</h3>
                 <h4>Magic: the Gathering deck builder</h4>
-                <a href="https://turboslug.app" wip>turboslug.app</a>
+                <a href="https://turboslug.app">turboslug.app</a>
                 <div>
-                    <time>2019-07</time> - <time>present</time>
+                    <time datetime="2019-07-01"></time> - <time>present</time>
                 </div>
                 <ul wip>
                     <li>
@@ -183,9 +183,20 @@
                 </ul>
             </div>
         </section>
-        <section wip>
+        <section>
             <h2>Volunteering</h2>
-            Skills Canada
+            <div class="job">
+                <h3>Skills Canada Judge</h3>
+                <div>
+                    <time datetime="2016-03-01"></time> - <time datetime="2019-03-01"></time>
+                </div>
+                <ul wip>
+                    <li>
+                        Judged the Skills Canada animation competition
+                    </li>
+                </ul>
+            </div>
+
         </section>
         <section class="education">
             <h2>Education</h2>
@@ -193,7 +204,7 @@
                 <h3>Bachelor of Computing: Software Engineering</h3>
                 <h4>University of Guelph</h4>
                 <div>
-                    <time>2015-09</time> - <time>2018-12</time>
+                    <time datetime="2015-09"></time> - <time datetime="2018-12"></time>
                 </div>
             </div>
         </section>
@@ -278,8 +289,20 @@
 
     </div>
     <script>
+        // @ts-check
         for (const li of document.querySelectorAll('li')) {
             li.innerHTML = li.innerHTML.replace(/^\s+/, '')
+        }
+        for (const time of document.querySelectorAll('time')) {
+            if (!time.dateTime) {
+                continue
+            }
+            const d = new Date(time.dateTime)
+
+            time.innerText = d.toLocaleDateString('default', {
+                month: 'short',
+                year: 'numeric',
+            })
         }
     </script>
 </body>
