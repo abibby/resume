@@ -50,6 +50,29 @@ body {
 
 .page-1 {
     column-count: 2;
+    // display: grid;
+
+    // grid-template-columns: 2fr 1fr;
+    // grid-template-areas:
+    //     "header header"
+    //     "exp    extra"
+    //     "footer footer";
+
+    // header {
+    //     grid-area: header;
+    // }
+
+    // .experience {
+    //     grid-area: exp;
+    // }
+
+    // .extra {
+    //     grid-area: extra;
+    // }
+
+    // footer {
+    //     grid-area: footer;
+    // }
 }
 
 h1,
@@ -157,6 +180,7 @@ section {
     margin-bottom: 1em;
     // page-break-inside: avoid;
 }
+
 
 .job {
     page-break-inside: avoid;
