@@ -3,7 +3,11 @@ $light-color: rgba($color, 0.7);
 
 $accent: #7f0000;
 
-$page-margin: 0.25in;
+$page-margin: 1in;
+
+* {
+    box-sizing: border-box;
+}
 
 :root {
     font-family: sans-serif;
@@ -27,8 +31,8 @@ $page-margin: 0.25in;
 
 .page {
     position: relative;
-    width: 8.5in - ($page-margin * 2);
-    height: 11in - ($page-margin * 2);
+    width: 8.5in;
+    height: 11in;
     padding: $page-margin;
 
     page-break-after: always;
@@ -36,6 +40,8 @@ $page-margin: 0.25in;
     @media screen {
         box-shadow: 0 0 5px 5px rgba(black, 0.2);
         overflow: hidden;
+
+        margin: 15px;
     }
 }
 
@@ -43,36 +49,13 @@ body {
 
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
-    font-size: 12px;
+    font-size: 11 * (1in / 72);
     color: $color;
 
 }
 
-.page-1 {
-    column-count: 2;
-    // display: grid;
-
-    // grid-template-columns: 2fr 1fr;
-    // grid-template-areas:
-    //     "header header"
-    //     "exp    extra"
-    //     "footer footer";
-
-    // header {
-    //     grid-area: header;
-    // }
-
-    // .experience {
-    //     grid-area: exp;
-    // }
-
-    // .extra {
-    //     grid-area: extra;
-    // }
-
-    // footer {
-    //     grid-area: footer;
-    // }
+.experience {
+    columns: 2;
 }
 
 h1,
@@ -85,6 +68,7 @@ h4 {
 
 h3 {
     color: $accent;
+    margin-top: 1em;
 }
 
 h4 {
@@ -191,6 +175,7 @@ ul {
 
     list-style: none;
     padding-left: $distance;
+    margin: 0;
 
     li::before {
         content: "\2022";
