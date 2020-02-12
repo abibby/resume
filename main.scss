@@ -3,7 +3,9 @@ $light-color: rgba($color, 0.7);
 
 $accent: #7f0000;
 
-$page-margin: 1in;
+$page-margin: 0.75in;
+
+$grid-gap: 0.25in;
 
 * {
     box-sizing: border-box;
@@ -55,7 +57,26 @@ body {
 }
 
 .experience {
-    columns: 2;
+    // columns: 2;
+
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: $grid-gap;
+    grid-template-areas:
+        "header header"
+        "extra body";
+
+    header {
+        grid-area: header;
+    }
+
+    .extra {
+        grid-area: extra;
+    }
+
+    .work-experience {
+        grid-area: body;
+    }
 }
 
 h1,
@@ -85,7 +106,7 @@ header {
     position: relative;
     column-span: all;
 
-    margin-bottom: 1em;
+    // margin-bottom: 1em;
 
     &::after {
         position: absolute;
@@ -167,7 +188,29 @@ section {
 
 
 .job {
-    page-break-inside: avoid;
+    // page-break-inside: avoid;
+}
+
+.extra {
+    margin-top: -$grid-gap;
+    padding-top: $grid-gap;
+
+    margin-left: -$page-margin;
+    padding-left: $page-margin;
+
+    margin-bottom: -$page-margin;
+    padding-bottom: $page-margin;
+
+    margin-right: -$grid-gap / 2;
+    padding-right: $grid-gap / 2;
+
+    background-color: #333;
+    color: #fff;
+
+
+    h3 {
+        color: #f77;
+    }
 }
 
 ul {
@@ -200,7 +243,8 @@ ul.comma {
         &:not(:last-child)::after {
             display: inline;
             content: " | ";
-            color: $accent;
+            // color: $accent;
+            color: #f77;
         }
     }
 }
