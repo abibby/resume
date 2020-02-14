@@ -1,7 +1,9 @@
-$color: black;
-$light-color: rgba($color, 0.7);
+@import './node_modules/nord/src/sass/nord.scss';
 
-$accent: #7f0000;
+$color: $nord0;
+$light-color: $nord3;
+
+$accent: $nord10; // 7.29
 
 $page-margin: 0.75in;
 
@@ -9,13 +11,6 @@ $grid-gap: 0.25in;
 
 * {
     box-sizing: border-box;
-}
-
-:root {
-    font-family: sans-serif;
-}
-
-* {
     -webkit-print-color-adjust: exact !important;
     color-adjust: exact !important;
 }
@@ -35,21 +30,29 @@ $grid-gap: 0.25in;
     position: relative;
     padding: $page-margin;
 
-    page-break-after: always;
-
-    margin: -8px;
+    page-break-before: always;
 
     width: calc(100% + 16px);
-    height: 11.32in;
+
+    &:first-of-type {
+        margin: -8px;
+        height: 11.427in;
+    }
 
     @media screen {
         box-shadow: 0 0 5px 5px rgba(black, 0.2);
         overflow: hidden;
 
-        margin: 15px;
+        margin: 15px !important;
         width: 8.5in;
         height: 11in;
     }
+
+    // background-color: pink;
+
+    // &:first-of-type {
+    //     background-color: plum;
+    // }
 }
 
 body {
@@ -58,7 +61,7 @@ body {
     font-weight: 300;
     font-size: 11 * (1in / 72);
     color: $color;
-
+    --accent: #{$accent};
 }
 
 .experience {
@@ -90,11 +93,16 @@ h2,
 h3,
 h4 {
     font-weight: 400;
+}
+
+h1,
+h3,
+h4 {
     margin: 0;
 }
 
 h3 {
-    color: $accent;
+    color: var(--accent);
     margin-top: 1em;
 }
 
@@ -104,7 +112,7 @@ h4 {
 }
 
 .subtitle {
-    color: $accent;
+    color: var(--accent);
     font-weight: 400;
 }
 
@@ -118,7 +126,7 @@ header {
         position: absolute;
         content: ' ';
         display: block;
-        top: -1in;
+        top: -$page-margin;
         bottom: 0;
         z-index: -1;
 
@@ -126,7 +134,7 @@ header {
         left: 50%;
         transform: translateX(-50%);
 
-        border-bottom: solid $accent 2px;
+        border-bottom: solid var(--accent) 2px;
 
         $hex-size: 1in;
         background-size: #{$hex-size * 2 * 30/36} #{$hex-size * 2};
@@ -182,18 +190,13 @@ a {
     text-decoration: none;
 
     &:hover {
-        color: $accent;
+        color: var(--accent);
         text-decoration: underline;
     }
 }
 
 section {
     margin-bottom: 1em;
-    // page-break-inside: avoid;
-}
-
-
-.job {
     // page-break-inside: avoid;
 }
 
@@ -210,13 +213,11 @@ section {
     margin-right: -$grid-gap / 2;
     padding-right: $grid-gap / 2;
 
-    background-color: #333;
-    color: #fff;
+    background-color: $nord0;
+    color: $nord6;
 
-
-    h3 {
-        color: #f77;
-    }
+    --accent: #{$nord8};
+    // --accent: red;
 }
 
 ul {
@@ -228,7 +229,7 @@ ul {
 
     li::before {
         content: "\2022";
-        color: $accent;
+        color: var(--accent);
         font-weight: bold;
         display: inline-block;
         width: $distance;
@@ -249,8 +250,7 @@ ul.comma {
         &:not(:last-child)::after {
             display: inline;
             content: " | ";
-            // color: $accent;
-            color: #f77;
+            color: var(--accent);
         }
     }
 }

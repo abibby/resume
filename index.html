@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <div class="page experience">
+    <template id="header">
         <header>
             <h1>Adam Bibby</h1>
             <div class="subtitle">Full Stack Developer</div>
@@ -41,6 +41,8 @@
                 </a>
             </address>
         </header>
+    </template>
+    <div class="page experience">
         <section class="work-experience">
             <h2>Work Experience</h2>
             <div class="job">
@@ -291,11 +293,6 @@
                 </div>
             </div>
         </section>
-
-        <footer hidden>
-            This resume is open source, check it out at
-            <a href="https://github.com/zwzn/resume">github.com/zwzn/resume</a>
-        </footer>
     </div>
     <script>
         // @ts-check
@@ -313,6 +310,15 @@
                 year: 'numeric',
             })
         }
+
+        const header = document.getElementById('header')
+        for (const page of document.querySelectorAll('.page')) {
+            page.prepend(document.importNode(header.content, true))
+            console.log(page);
+
+            // page.append(header.content)
+        }
+
     </script>
 </body>
 

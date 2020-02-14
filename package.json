@@ -19,6 +19,7 @@
   "homepage": "https://github.com/zwzn/resume#readme",
   "dependencies": {
     "chrome-headless-render-pdf": "^1.8.4",
-    "node-sass": "^4.13.1"
+    "node-sass": "^4.13.1",
+    "nord": "^0.2.1"
   }
 }
