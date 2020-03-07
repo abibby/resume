@@ -49,7 +49,7 @@
                 <h3>Automac Technical Solutions</h3>
                 <h4>Full Stack Developer</h4>
                 <div>
-                    <time datetime="2017-05-01"></time> - <time>present</time>
+                    <time datetime="2017-04-01"></time> - <time>present</time>
                 </div>
                 <ul>
                     <li>
@@ -105,12 +105,21 @@
                     </div>
                     <ul>
                         <li>
+                            Worked on a website where users will donate to
+                            charities by mining cryptocurrency in you web
+                            browser.
+                        </li>
+                        <li>
                             Set up a serverless single page app deployed to
                             Firebase.
                         </li>
                         <li>
                             Implemented React components following a pre
                             defined design system.
+                        </li>
+                        <li>
+                            Worked in a teaching role to help the team learn
+                            modern web development technologies.
                         </li>
                     </ul>
                 </div>
@@ -308,15 +317,14 @@
             time.innerText = d.toLocaleDateString('default', {
                 month: 'short',
                 year: 'numeric',
+                timeZone: 'UTC',
             })
         }
 
-        const header = document.getElementById('header')
+        /** @type {HTMLTemplateElement} header */
+        const header = document.querySelector('#header')
         for (const page of document.querySelectorAll('.page')) {
             page.prepend(document.importNode(header.content, true))
-            console.log(page);
-
-            // page.append(header.content)
         }
 
     </script>
